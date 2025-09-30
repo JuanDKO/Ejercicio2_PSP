@@ -57,12 +57,11 @@ import java.io.FileWriter;
                 System.out.println(e.getMessage());
             }
 
-
             return contador;
         }
         public void subirDatos() {
             try(BufferedWriter out = new BufferedWriter(new FileWriter(escritura))) {
-                out.write(contarLetra());
+                out.write(String.valueOf(contarLetra()));
             }
             catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -70,35 +69,35 @@ import java.io.FileWriter;
         }
 
         public boolean comprobarTildeA(String letra) {
-            if (letra.equalsIgnoreCase("a") && letra.equalsIgnoreCase("á")) {
+            if (letra.equalsIgnoreCase("a") || letra.equalsIgnoreCase("á")) {
                 return true;
             }else {
                 return false;
             }
         }
         public boolean comprobarTildeE(String letra) {
-            if (letra.equalsIgnoreCase("e") && letra.equalsIgnoreCase("é")) {
+            if (letra.equalsIgnoreCase("e") || letra.equalsIgnoreCase("é")) {
                 return true;
             }else {
                 return false;
             }
         }
         public boolean comprobarTildeI(String letra) {
-            if (letra.equalsIgnoreCase("i") && letra.equalsIgnoreCase("í")) {
+            if (letra.equalsIgnoreCase("i") || letra.equalsIgnoreCase("í")) {
                 return true;
             }else {
                 return false;
             }
         }
         public boolean comprobarTildeO(String letra) {
-            if (letra.equalsIgnoreCase("o") && letra.equalsIgnoreCase("ó")) {
+            if (letra.equalsIgnoreCase("o") || letra.equalsIgnoreCase("ó")) {
                 return true;
             }else {
                 return false;
             }
         }
         public boolean comprobarTildeU(String letra) {
-            if (letra.equalsIgnoreCase("u") && letra.equalsIgnoreCase("ú")) {
+            if (letra.equalsIgnoreCase("u") || letra.equalsIgnoreCase("ú")) {
                 return true;
             }else {
                 return false;
@@ -112,14 +111,7 @@ import java.io.FileWriter;
         }
 
         public void secuencial_run() {
-            for (int i = 1; i <= 5; i++) {
-                try {
                     subirDatos();
-                    Thread.sleep(1000); // Simula trabajo de 1 segundo
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
             System.out.println(" terminó.");
         }
     }
