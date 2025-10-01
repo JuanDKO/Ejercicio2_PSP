@@ -7,8 +7,8 @@ public class productor extends Thread {
     }
 
     public static int generador() {
-        // Genero numeros del 1 al 10
-        return (int) ((Math.random()+1) * 11);
+        // Genero numeros enteros que devolver
+        return (int) ((Math.random()) * 11);
     }
 
     @Override
